@@ -3,6 +3,8 @@
 #include <assert.h>
 #include <string.h>
 
+#include "heap.h"
+
 using namespace std;
 
 #define MIN 100
@@ -37,7 +39,7 @@ int main(int argc, char *argv[]) {
 }
 
 int generateRandomInt(int min, int max) {
-    uniform_int_distribution<mt19937::result_type> distribution(min, max); 
+    uniform_int_distribution<mt19937::result_type> distribution(min, max);
     return distribution(rng);
 }
 
@@ -49,7 +51,9 @@ void printArray(int *array, size_t size) {
 }
 
 void heapsort(int* array, size_t size) {
-    // TODO
+    Heap h(array, size);
+
+    h.heapsort();
 }
 
 bool validate(int* array, size_t size) {
